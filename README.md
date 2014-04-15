@@ -18,7 +18,41 @@ Reference in your program:
 var sv = require('simplevalues');
 ```
 
-TBD
+Create a value with `null` as initial data
+```js
+var v = sv.value();
+```
+
+Create a value with initial data
+```js
+var v = sv.value(123);
+```
+
+Get data value
+```js
+var data = v();
+```
+
+Set data value
+```js
+v(124);
+```
+
+On set data:
+```js
+v.on('set', function (data) {
+    console.log(data);
+});
+```
+
+On change data:
+```js
+v.on('change', function (data) {
+    console.log(data);
+});
+```
+
+The `change` event is only emitted when the new value is strict not equal to the old value.
 
 ## Development
 
