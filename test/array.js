@@ -46,3 +46,13 @@ exports['push new data'] = function (test) {
     test.strictEqual(array(2), 4);
 };
 
+exports['clear array'] = function (test) {
+    var array = sv.array([1,2,3]);
+    
+    test.ok(array);
+    test.equal(typeof array, 'function');
+    test.strictEqual(array.count(), 3);
+    
+    array.clear();
+    test.strictEqual(array.count(), 0);
+};
