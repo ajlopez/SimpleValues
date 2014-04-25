@@ -45,3 +45,15 @@ exports['on change'] = function (test) {
     
     array(0, 'foo');
 };
+
+exports['on clear'] = function (test) {
+    test.async();
+    
+    var array = sv.array();
+    
+    array.on('clear', function () {
+        test.done();
+    });
+    
+    array.clear();
+};
