@@ -57,3 +57,18 @@ exports['on clear'] = function (test) {
     
     array.clear();
 };
+
+exports['on push'] = function (test) {
+    test.async();
+    
+    var array = sv.array();
+    
+    array.on('push', function (item) {
+        test.ok(item);
+        test.equal(item, 123);
+        test.done();
+    });
+    
+    array.push(123);
+};
+
